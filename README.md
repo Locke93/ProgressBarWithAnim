@@ -3,4 +3,4 @@
 
 
 ### GIF like this
-![image](https://github.com/lcokean/ProgressBarWithAnim/art/demo.gif)
+![image](https://raw.githubusercontent.com/lcokean/ProgressBarWithAnim/master/art/demo.gif)
