@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
 
     <com.github.library.progressbarview.HorizontalProgressBarWithAnim
         android:id="@+id/progressbar"
@@ -10,10 +12,22 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:layout_margin="10dp"
-        android:padding="1dp"
+        android:padding="2dp"
         android:progress="0"
         app:progress_background_color="#dedede"
         app:progress_src="@drawable/progrssbar" />
+
+    <com.github.library.progressbarview.HorizontalProgressBarWithAnim
+        android:id="@+id/progressbar1"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_centerInParent="true"
+        android:layout_margin="10dp"
+        android:layout_marginTop="30dp"
+        android:padding="2dp"
+        android:progress="0"
+        app:progress_background_color="#dedede"
+        app:progress_src="@mipmap/ic_launcher" />
 
     <Button
         android:id="@+id/button"
@@ -21,7 +35,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="100dp"
+        android:layout_marginTop="30dp"
         android:text="重置" />
 
     <Button
@@ -30,7 +44,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="50dp"
+        android:layout_marginTop="10dp"
         android:text="动画" />
 
-</RelativeLayout>
+</LinearLayout>

@@ -12,6 +12,7 @@ import com.github.library.progressbarview.HorizontalProgressBarWithAnim;
 public class MainActivity extends AppCompatActivity {
 
     HorizontalProgressBarWithAnim mProgressBar;
+    HorizontalProgressBarWithAnim mProgressBar1;
     Button button;
 
     private static final int MSG_PROGRESS_UPDATE = 0x110;
@@ -20,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
         public void handleMessage(Message msg) {
             int progress = mProgressBar.getProgress();
             mProgressBar.setProgress(++progress);
+            mProgressBar1.setProgress(progress);
             if (progress >= 100) {
                 mHandler.removeMessages(MSG_PROGRESS_UPDATE);
             }
@@ -33,11 +35,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mProgressBar = (HorizontalProgressBarWithAnim) findViewById(R.id.progressbar);
+        mProgressBar1 = (HorizontalProgressBarWithAnim) findViewById(R.id.progressbar1);
         button = (Button) findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 mProgressBar.setProgress(0);
+                mProgressBar1.setProgress(0);
                 mHandler.sendEmptyMessage(MSG_PROGRESS_UPDATE);
             }
         });
@@ -49,6 +53,12 @@ public class MainActivity extends AppCompatActivity {
                     mProgressBar.startAnim(200);
                 } else {
                     mProgressBar.stopAnim();
+                }
+
+                if (!mProgressBar1.isRunning()) {
+                    mProgressBar1.startAnim(200);
+                } else {
+                    mProgressBar1.stopAnim();
                 }
             }
         });
