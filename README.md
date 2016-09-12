@@ -2,5 +2,5 @@
 带动画的progressbar
 
 
-### 修改切换时出现的BUG
+### GIF like this
 ![image](https://github.com/lcokean/ProgressBarWithAnim/art/demo.gif)
